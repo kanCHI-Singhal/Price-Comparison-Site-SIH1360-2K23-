@@ -1,0 +1,1532 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equip="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0" />
+    <title>CompareSphere_Website</title>
+    <script src="https://kit.fontawesome.com/0049c3d35c.js"></script>
+    <script src="api.js"></script>
+
+
+
+    <link rel="stylesheet" href="style.css">
+    <style> 
+    *{
+      margin:0;
+      padding:0;
+    }
+    @import url('https://fonts.googleapis.com/css2?family=spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'spartan',sans-serif;
+}
+
+h1{
+    font-size: 50px;
+    line-height: 64px;
+    color: #222;
+}
+
+h2{
+    font-size: 46px;
+    line-height: 54px;
+    color: #222;
+}
+
+h4{
+    font-weight: 700;
+    font-size: 12px;
+}
+
+h6{
+    font-weight: 700;
+    font-size: 12px;
+}
+
+P{
+    font-size: 16px;
+    color: #465b52;
+    margin: 15px 0 20px 0;
+}
+
+.section-p1 {
+    padding: 40px 80px;
+}
+
+.section-m1 {
+    margin: 40px 0;
+}
+
+button.normal{
+  font-size: 14px;
+  font-weight: 600;
+  padding: 15px 30px;
+  color: #000;
+  background-color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: 0.2s;
+}
+
+body {
+    width: 100%;
+}
+
+
+/* Header start */
+
+#header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 80px;
+    background: #E3E6F3;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+    z-index: 999;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#navbar li{
+    list-style: none;
+    padding: 0 20px;
+    position: relative;
+}
+
+#navbar li a{
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+    transition: 0.3s ease;
+}
+
+#navbar li a:hover,
+#navbar li a.active {
+    color: #088178;
+}
+
+#navbar li a.active::after,
+#navbar li a:hover::after {
+    content:"";
+    width: 30%;
+    height: 2px;
+    background: #088178;
+    position: absolute;
+    bottom: -4px;
+    left:20px;
+
+}
+/* Home Page */
+#hero {
+    background-image: url("images/banner/Banner\ 1.png");
+    height: 90vh;
+    width: 100%;
+    background-size: cover;
+    background-position: top 25% right 0;
+    padding: 0 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+#hero h4{
+    padding-bottom: 15px;
+}
+
+#hero h1 {
+    color: #088178;
+}
+
+#hero button{
+    background-image: url("images/banner/button.png");
+    background-color: transparent;
+    color: #088178;
+    border: 0;
+    padding: 14px 80px 14px 65px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 15px;
+}
+/* Features start */
+#feature {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#feature .fe-box{
+    width: 180px;
+    text-align: center;
+    padding: 25px 20px;
+    box-shadow: 30px 30px 38px rgba(0,0,0,0.03);
+    border: 1px solid #cce7d0;
+    border-radius: 4px;
+    margin: 15px 0;
+}
+
+#feature .fe-box:hover{
+    box-shadow: 10px 10px 54px rgba(70,62,221,0.1);
+}
+#feature .fe-box img {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#feature .fe-box h6 {
+    display: inline-block;
+    padding: 9px 8px 6px 8px;
+    line-height: 1;
+    border-radius: 4px;
+    color: #088178;
+    background-color: #fddde4;
+}
+
+#feature .fe-box:nth-child(2) h6{
+    background-color: #cdebbc;
+
+}
+
+#feature .fe-box:nth-child(3) h6{
+    background-color: #d1e8f2;
+
+}
+
+#feature .fe-box:nth-child(4) h6{
+    background-color: #cdd4f8;
+
+}
+
+#feature .fe-box:nth-child(5) h6{
+    background-color: #f6dbf6;
+
+}
+/* features end */
+
+
+
+/*SETTINGS PAGE*/
+              body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 20px;
+                background-color: #ffffff;
+                overflow-x: hidden; /* Hide horizontal scrollbar */
+              }
+          
+              .container {
+                position: fixed;
+                top: 0;
+                right: -300px; /* Start off-screen */
+                width: 300px;
+                height: 100%;
+                background-color: #f1bdcb;
+                padding: 20px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                transition: right 0.3s ease-out;
+              }
+          
+              .header {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-bottom: 20px;
+              }
+          
+              .user-photo {
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                margin-bottom: 10px;
+              }
+          
+              .user-name {
+                font-size: 18px;
+                font-weight: bold;
+              }
+          
+              .settings-content {
+                overflow: hidden;
+              }
+          
+              .overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.5);
+                display: none;
+              }
+          
+              .setting {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 15px;
+              }
+          
+              .setting label {
+                flex-grow: 1;
+              
+              }
+          
+              .slider-container {
+                position: relative;
+                display: inline-block;
+                width: 60px;
+                height: 34px;
+              }
+          
+              .slider-input {
+                display: none;
+              }
+          
+              .slider {
+                position: absolute;
+                cursor: pointer;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: #ccc;
+                transition: .4s;
+                border-radius: 34px;
+              }
+          
+              .slider:before {
+                position: absolute;
+                content: "";
+                height: 26px;
+                width: 26px;
+                left: 4px;
+                bottom: 4px;
+                background-color: white;
+                transition: .4s;
+                border-radius: 50%;
+              }
+          
+              .slider-input:checked + .slider {
+                background-color: rgb(241, 162, 245);
+              }
+          
+              .slider-input:checked + .slider:before {
+                transform: translateX(26px);
+              }
+          
+              .name-input,
+              .language-select {
+                width: 100%;
+                padding: 8px;
+                font-size: 16px;
+              }
+          
+              .email-toggle-container {
+                display: flex;
+                align-items: center;
+              }
+          
+              /*.email-toggle-container label {
+                margin-right: 15px;
+              }*/
+          
+              .toggle-button {
+                background: none;
+                border: none;
+                padding: 0;
+                cursor: pointer;
+              }
+          
+              .toggle-button img {
+                width: 30px; /* Set the width of your image */
+                height: 30px; /* Set the height of your image */
+              }
+          
+              .sign-out {
+                margin-top: auto; /* Push the button to the bottom */
+                margin-top: 8px;
+    position: center;
+    border: 2px solid grey;
+    padding: 2px;
+              }
+        /*SETTINGS PAGE*/
+        /* New Arrivels */
+        #product1 {
+          text-align: center;
+
+        }
+
+    #product1 .pro-container {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 20px;
+      flex-wrap: wrap;
+    }
+
+        
+        #product1 .pro{
+          width:23%;
+          min-width: 250px;
+     padding: 10px 12px;
+     border: 1px solid  #cce7d0 ;
+     border-radius: 25px;
+     cursor: pointer;
+     box-shadow: 20px 20px 30px rgba(0,0,0,0,02) ;
+     margin: 15px 0;
+     transition:0.02s ease;
+     position:relative;
+
+        }
+        #product1 .pro:hover{
+          box-shadow: 20px 20px 30px rgba(0,0,0,0.06);
+
+        }
+
+        #product1 .pro img{
+          height: 200px;
+          width: 100%;
+          border-radius: 20px;
+
+        }
+
+        #product1 .pro .des{
+          text-align: start;
+          padding: 10px 0;
+
+        }
+        #product1 .pro .des span{
+          color:#606063;
+          font-size: 12px;
+
+        }
+        #product1 .pro .des h5{
+          padding-top: 7px;
+          color:#1a1a1a;
+font-size:14px;
+
+        }
+        #product1 .pro .des i{
+          font-size: 12px;
+          color:rgb(243,181,25);
+
+
+        }
+        #product1.pro.des h4{
+          padding-top: 7px;
+          font-size:15px;
+          font-weight: 700;
+          color:#088178;
+        }
+        #product1 .pro .cart{
+          width:40px;
+          height:40px;  
+          line-height:40px;
+          border-radius:50px;
+          background-color: #e8f6ea;
+          font-weight: 500;
+          color:#088178;
+          border: 1px solid #cce780;
+          position:absolute;
+          bottom:20px;
+        
+        }
+        /*New Arriverls ends here*/
+
+        
+        /*ANOTHER BANNER*/
+        #banner{
+          display:flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          background-image: url("images/banner/banner\ 5.png");
+          width: 100%;
+          height: 40vh;
+          background-size: cover;
+          background-position: center;
+        }
+        
+        #banner h4{
+          color: #fff;
+        font-size: 16px;
+       }
+       
+       #banner h2 {
+        color: #fff;
+        font-size: 30px;
+        padding: 10px 0;
+       }
+
+
+       #banner h2 span{
+        color: #f7f76f;
+        }
+        #banner button:hover{
+          background-color: #ef7f7d;
+          color: #fff;
+        }
+        #Banner{
+    display:flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+text-align: center;
+background-image: url("image/banner/   ");
+width:100%;
+height:40vh;
+background-size: cover;
+background-position: center;
+}
+
+#Banner h4{
+    color:#ef3636;
+  
+}
+button.normal{
+    font-size: 14px;
+    font-weight: 600;
+    padding: 15px 30px;
+    color:#000;
+    background-color: #fff;
+    border-radius: 4px;
+    cursor:pointer;
+    border:none;
+    outline:none;
+    transition:0.2s;
+  
+}
+#Banner button:hover{
+    background: #088178;
+    color:#fff;
+}
+
+/*Register yourself*/
+#Registeryourself{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  background-image: url(images/banner/banner\ 4.png);
+  background-repeat: no-repeat;
+  background-position: 20% 30%;
+  background-color: #041e42;
+}
+
+#Registeryourself h4{
+  font-size: 22px;
+  font-weight: 700;
+  color: #f5a9a9;
+}
+
+#Registeryourself p{
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+#Registeryourself p span{
+  color: #e9f56c;
+}
+
+#Registeryourself .form{
+  display: flex;
+  width: 40%;
+}
+
+#Registeryourself input{
+  height: 3.125rem;
+  padding: 0 1.25em;
+  font-size: 14px;
+  width: 50%;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  outline: none;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+#Registeryourself button{
+  background-color: #2a7dc5;
+  color: #fff;
+  white-space: nowrap;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+/*Footer*/
+
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+footer .col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+footer .logo {
+  margin-bottom: 30px;
+}
+
+footer h4{
+  font-size: 14px;
+  padding-bottom: 20px;
+}
+
+footer p{
+  font-size: 13px;
+  margin: 0 0 8px 0;
+}
+
+footer a{
+  font-size: 13px;
+  text-decoration: none;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+footer .Follow{
+  margin-top: 20px;
+}
+
+footer .Follow i{
+  color: #465b52;
+  padding-right: 4px;
+  cursor: pointer;
+}
+
+footer .install .row img{
+  border: 1px solid #f989ce;
+  border-radius: 6px;
+}
+
+footer .install img{
+  margin: 10px 0 15px 0;
+}
+
+footer .Follow i:hover,
+footer a:hover {
+  color: #f989ce;
+}
+
+footer .CopyRight{
+  text-align: center;
+}
+/* Fotter ends */
+
+
+
+
+
+
+/*side menu start */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+nav {
+  background-color:  #E3E6F3;
+  color: #0b0101;
+  padding: 15px;
+  text-align: right;
+  cursor:pointer;
+  
+  
+}
+
+.sidebar {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: -250px;
+  background-color: rgb(255, 255, 255);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  cursor:pointer;
+}
+
+.sidebar a {
+  padding: 15px 25px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #de8dc6;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #7f7d7d;
+}
+
+.content {
+  margin-left: 250px;
+  padding: 16px;
+}
+
+/* Style the navigation bar dropdown menu */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Style the navigation links */
+.navbar a {
+  float: left;
+  display: block;
+  color:black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+  background-color:rgb(3, 3, 3);
+  color:black;
+}
+
+/* Create the dropdown container */
+.dropdown {
+  float: left;
+  overflow: hidden;
+  
+}
+
+/* Style the dropdown button */
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: black;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+
+}
+
+/* Style the dropdown content */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Style the dropdown links */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Change color on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+.nested-dropdown-content a {
+    color: #70747c;
+    padding: 15px 16px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-radius: 10px;
+  }
+
+
+ 
+
+
+    </style>
+     
+
+
+</head>
+
+
+
+<!-- HTML STARTS -->
+<body>
+<!--NAV BAR -->
+    <section id="header">
+        <a href="#"><img src="images/logo.png" class="logo" alt=""></a>
+    
+        <div>
+            <ul id="navbar">
+                <li><a class="active" href="index.html"></i>Home</a></li>
+                <div class="dropdown">
+                  <button class="dropbtn" onclick="toggleDropdown()"> Category
+                    <i class="fa fa-caret-down"></i>
+                     </button>
+                  <div class="dropdown-content" id="dropdownContent" >
+                    <a href="product_mobile.html"> Mobile phones </a>
+                    <a href="product_laptop.html">Laptop</a>
+                    <a href="product_television.html">Television</a>
+                    <a href="product_refrigerator.html">Refrigerator</a>
+                    <a href="product_webcam.html  ">WebCam</a>
+                    <a href="product_speakers.html">Speakers</a>
+                    <a href="product_drives.html">Drives</a>
+                    <a href="product_pulses.html">Pulses</a>
+                    <a href="product_shampoo.html">Shampoo</a>
+                    <a href="product_toothpastes.html.html">Toothpastes</a>
+                  </div>
+                </div>
+                <li><a href="about.html">About</a></li>
+                <a href="registration.html" class="register-button">REGISTER YOUR STORE</a>
+                <style>
+    .register-button {
+      display: inline-block;
+      padding: 15px 30px;
+      font-size: 15px;
+      font-weight: bold;
+    
+      text-decoration: none;
+      background-color:#E3E6F3;
+      color: black;
+      border: 2px solid #E3E6F3;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+      width:max-content;
+    }
+
+    .register-button:hover {
+      background-color:#b2dfdc;
+      border-color:#b2dfdc ;
+    }
+                </style>
+        
+                <li><a href="search engine.html"><i class="fa-brands fa-searchengin"></i></a></li>
+                <li><a href="login.html"> Login </a></li>
+                
+            </ul>
+          
+
+        </div>
+          <!-- extra features -->
+       <nav>
+              <div class="menu-toggle" onclick="toggleSidebar()">
+                <i class="fa-solid fa-bars"></i>
+              </div>
+          </nav>
+          <div class="sidebar" id="sidebar">
+            <li><a href="login.html"><i class="fa-solid fa-user"></i> Log in</a></li>
+            <li><a href="signup.html"><i class="fa-solid fa-registered"></i> Sign Up</a></li>
+            <li><a href="rating.html"><i class="fa-solid fa-star"></i> Rating </a></li>
+            <li><a href="review.html"><i class="fa-solid fa-comments"></i> Review </a></li>
+          </div>
+
+
+
+
+
+
+          
+          
+          <!-- extra features end -->
+        
+        
+        
+            <!-- Settings page start -->
+          <div class="overlay" onclick="toggleSettings()"></div>
+          
+          <button class="toggle-button" onclick="toggleSettings()">
+            <!--<img src="images/banner/settings.png" alt="Toggle Settings">-->
+            <i class="fa-solid fa-user"></i>
+            <style>
+            i{
+              font-size: 20px !important;
+            }
+            </style>
+          </button>
+          
+          <div class="container">
+            <div class="header">
+              <img class="user-photo" src="images/banner/user.png" alt="User Photo">
+              <div class="user-name">User name</div>
+            </div>
+          
+            <div class="settings-content">
+              <div class="setting">
+                <label>Receive Email Notifications</label>
+                <div class="slider-container">
+                  <input type="checkbox" class="slider-input" id="emailToggle1">
+                  <label class="slider" for="emailToggle1"></label>
+                </div>
+              </div>
+          
+              <div class="setting">
+                <label>Show Profile to Others</label>
+                <div class="slider-container">
+                  <input type="checkbox" class="slider-input" id="profileToggle">
+                  <label class="slider" for="profileToggle"></label>
+                </div>
+              </div>
+          
+              <div class="setting">
+                <label>Change Name:</label>
+                <input type="text" id="nameInput" class="name-input" placeholder="Enter your new name">
+              </div>
+          
+              <div class="setting">
+                <label>Contact:</label>
+                <input type="number" id="nameInput" class="name-input" placeholder="Enter your new Contact">
+              </div>
+          
+              <div class="setting">
+                <label>Choose Language:</label>
+                <select id="languageSelect" class="language-select">
+                  <option value="en">English</option>
+                  <option value="es">Hindi</option>
+                  <option value="fr">French</option>
+                  <!-- Add more language options as needed -->
+                </select>
+              </div>
+          
+              <div class="setting email-toggle-container">
+                <label>Receive Email Notifications:</label>
+                <div class="slider-container">
+                  <input type="checkbox" class="slider-input" id="emailToggle2">
+                  <label class="slider" for="emailToggle2"></label>
+                </div>
+              </div>
+              <button  onclick="saveChanges()" style="    padding: 2px">Save Changes  </button>
+            </div>
+          
+            <!-- Sign Out Button -->
+          <div>  <button style="position:center; border: 2px solid grey;" class="sign-out">Sign Out</button>
+          </div>
+          
+    </section>
+<!-- settings page closed -->
+
+<!-- Nav bar closed -->
+    <section id="hero">
+        <h4>Don't Settle for Less!</h4>
+        <h2> Where Every Comparison Comes with a Deal</h2>
+        <h1>Wanna try now?</h1>
+        <p>Save More with the Goverment E-marketplate at ease</p>
+        <button>Compare now</button>
+    </section>
+<!-- Features start -->
+    <section id="feature" class="section-p1">
+        <div class="fe-box">
+       <img src="images/banner/comparison chart.png" alt="">
+            <h6>Comparison charts</h6>
+        </div>
+        <div class="fe-box">
+            <img src="images/banner/product listing.png" alt="">
+            <h6>Product Listing</h6>
+        </div>
+        <div class="fe-box">
+            <img src="images/banner/search and filter.png" alt="">
+            <h6>Search and filter</h6>
+        </div>
+        <div class="fe-box">
+            <img src="images/banner/User Reviews and Ratings.png" alt="">
+            <h6>User reviews and ratings</h6>
+        </div>
+        <div class="fe-box">
+            <img src="images/banner/vendor info.png" alt="">
+            <h6>Vendor Info</h6>
+        </div>
+    </section>
+    <!-- Features end -->
+
+    <!-- Featured product start -->
+    <section id="product1" class="section-p1">
+      <h2>Featured products</h2>
+      <p> Products of Gem  </p>
+      <div class="pro-container">
+        <div class="pro">
+          <a href="laptop_hp_index.html">  <img src="images/products/gem hp product 1.jpeg" alt="Product 1"></a>
+      <div class="des">
+       
+        <h5> Hp AMD Athlon 14 inch Laptop (Window 11 Home) </h5>
+        <div class="star">
+          <i class="fas fa-star"> </i>
+          <i class="fas fa-star"> </i>
+          <i class="fas fa-star"> </i>
+          <i class="fas fa-star"> </i>
+        <i class="fas fa-star"> </i>
+        </div>
+      </div>
+      <p> GEM</p>
+    </div>
+      
+
+        <div class="pro">
+          <a href="refrigerator_index.html">   <img src="images/products/gem machine5.jpeg" alt="Product 1">  </a>
+      <div class="des">
+     
+        <h5> single door refrigerator </h5>
+        <div class="star">
+          <i class="fas fa-star"> </i>
+          <i class="fas fa-star"> </i>
+          <i class="fas fa-star"> </i>
+          <i class="fas fa-star"> </i>
+        <i class="fas fa-star"> </i>
+        </div>
+      </div>
+      <p> GEM</p>
+        </div>
+
+
+        <div class="pro">
+          <a href="mobile_samsung_index.html">    <img src="images/products/gem phone samsung 2.jpeg" alt="Product 1">   </a>   
+      <div class="des">
+      
+        <h5> Samsung smartphone 8/64GB </h5>
+        <div class="star">
+          <i class="fas fa-star"> </i>
+          <i class="fas fa-star"> </i>
+          <i class="fas fa-star"> </i>
+          <i class="fas fa-star"> </i>
+        <i class="fas fa-star"> </i>
+        </div>
+      </div>
+      <p> GEM</p>
+        </div>
+
+
+
+        <div class="pro">
+           <img src="images/products/gem fire4.png" alt="Product 1">
+      <div class="des">
+      
+        <h5> cell with high voltage</h5>
+        <div class="star">
+          <i class="fas fa-star"> </i>
+          <i class="fas fa-star"> </i>
+          <i class="fas fa-star"> </i>
+          <i class="fas fa-star"> </i>
+        <i class="fas fa-star"> </i>
+        </div>
+      </div>
+      <p> GEM</p>
+        </div>
+
+
+       
+        <div class="pro">
+          <img src="images/products/cloth amz4.png" alt="Product 1">
+      <div class="des">
+      
+        <h5> los angles hoodie </h5>
+        <div class="star">
+          <i class="fas fa-star"> </i>
+          <i class="fas fa-star"> </i>
+          <i class="fas fa-star"> </i>
+          <i class="fas fa-star"> </i>
+        <i class="fas fa-star"> </i>
+        </div>
+      </div>
+      <p> AMAZON </p>
+        </div>
+
+
+        <div class="pro">
+          <a href="laptop_acer_index.html">   <img src="images/products/acer amz laptop1.jpeg" alt="Product 1"> </a>
+      <div class="des">
+        <span> HP </span>
+        <h5> acer intel core i5 </h5>
+        <div class="star">
+          <i class="fas fa-star"> </i>
+          <i class="fas fa-star"> </i>
+          <i class="fas fa-star"> </i>
+          <i class="fas fa-star"> </i>
+        <i class="fas fa-star"> </i>
+        </div>
+      </div>
+      <p> AMAZON </p>
+        </div>
+
+
+        <div class="pro">
+          <a href="mobile_samsung_index.html">    <img src="images/products/samsung amz phone2.jpeg" alt="Product 1"> </a>
+      <div class="des">
+        
+        <h5> samsung smart phone</h5>
+        <div class="star">
+          <i class="fas fa-star"> </i>
+          <i class="fas fa-star"> </i>
+          <i class="fas fa-star"> </i>
+          <i class="fas fa-star"> </i>
+        <i class="fas fa-star"> </i>
+        </div>
+      </div>
+      <p> AMAZON </p>
+        </div>
+
+
+        <div class="pro">
+             <img src="images/products/amz bag3.png" alt="Product 1"> 
+      <div class="des">
+       
+        <h5> Medium trolly bag </h5>
+        <div class="star">
+          <i class="fas fa-star"> </i>
+          <i class="fas fa-star"> </i>
+          <i class="fas fa-star"> </i>
+          <i class="fas fa-star"> </i>
+        <i class="fas fa-star"> </i>
+        </div>
+      </div>
+      <p> AMAZON </p>
+        </div>
+
+
+        <div class="pro">
+          <a href="refrigerator_index.html">  <img src="images/products/friz flipkart2.jpeg" alt="Product 1"></a>
+      <div class="des">
+      
+        <h5> high cool refrigerator </h5>
+        <div class="star">
+          <i class="fas fa-star"> </i>
+          <i class="fas fa-star"> </i>
+          <i class="fas fa-star"> </i>
+          <i class="fas fa-star"> </i>
+        <i class="fas fa-star"> </i>
+        </div>
+      </div>
+      <p> FLIPKART </p>
+        </div>
+
+
+        <div class="pro">
+          <img src="images/products/bed flipkarty3.png" alt="Product 1">
+      <div class="des">
+      
+        <h5> Double bed with comfort matresses </h5>
+        <div class="star">
+          <i class="fas fa-star"> </i>
+          <i class="fas fa-star"> </i>
+          <i class="fas fa-star"> </i>
+          <i class="fas fa-star"> </i>
+        <i class="fas fa-star"> </i>
+        </div>
+      </div>
+      <p> FLIPKART </p>
+      </div>
+
+      
+      <div class="pro">
+        <a href="product_television.html">   <img src="images/products/tv flipkart1.jpeg" alt="Product 1"></a>
+    <div class="des">
+      
+      <h5> intex televesion 32 inch LED </h5>
+      <div class="star">
+        <i class="fas fa-star"> </i>
+        <i class="fas fa-star"> </i>
+        <i class="fas fa-star"> </i>
+        <i class="fas fa-star"> </i>
+      <i class="fas fa-star"> </i>
+      </div>
+    </div>
+    <p> FLIPKART </p>
+    </div>
+
+    <div class="pro">
+        <img src="images/products/watch flipkart4.png" alt="Product 1">
+  <div class="des">
+  
+    <h5> Smart wrist watch </h5>
+    <div class="star">
+      <i class="fas fa-star"> </i>
+      <i class="fas fa-star"> </i>
+      <i class="fas fa-star"> </i>
+      <i class="fas fa-star"> </i>
+    <i class="fas fa-star"> </i>
+    </div>
+  </div>
+  <p> FLIPKART </p>
+  </div>
+
+    </section>
+    <!-- Featured products end -->
+
+    <!--Banner start-->
+    <section id="banner" class="section-m1">
+      <h4>Compare Services</h4>
+      <h2>Get in touch with all <span>WORLDWIDE</span> Website comparison!!</h2>
+      <button class="normal">Explore Now!</button>
+    </section>
+    <!--Banner end-->
+    <!-- New arrivals start -->
+    <section id="product1" class="section-p1">
+      <h2>NEW ARRIVALS</h2>
+      <p> Find new and fresh products for yourself at best price  </p>
+      <div class="pro-container">
+        <div class="pro">
+          <a href="laptop_hp_index.html"> <img src="images/products/gem hp product 1.jpeg" alt="Product 1"></a>
+      <div class="des">
+     
+        <h5> Hp AMD Athlon 14 inch Laptop (Window 11 Home) </h5>
+        <div class="star">
+          <i class="fas fa-star"> </i>
+          <i class="fas fa-star"> </i>
+          <i class="fas fa-star"> </i>
+          <i class="fas fa-star"> </i>
+        <i class="fas fa-star"> </i>
+        </div>
+      </div>
+      <p> GEM</p>
+    </div>
+      
+
+        <div class="pro">
+          <a href="refrigerator_index.html"> <img src="images/products/gem machine5.jpeg" alt="Product 1"> </a>
+      <div class="des">
+      
+        <h5>  single door refrigerator </h5>
+        <div class="star">
+          <i class="fas fa-star"> </i>
+          <i class="fas fa-star"> </i>
+          <i class="fas fa-star"> </i>
+          <i class="fas fa-star"> </i>
+        <i class="fas fa-star"> </i>
+        </div>
+      </div>
+      <p> GEM</p>
+        </div>
+
+
+        <div class="pro">
+          <a href="mobile_samsung_index.html"></a> <img src="images/products/gem phone samsung 2.jpeg" alt="Product 1">      
+      <div class="des">
+        <h5>samsung smart phone 8/64 GB </h5>
+        <div class="star">
+          <i class="fas fa-star"> </i>
+          <i class="fas fa-star"> </i>
+          <i class="fas fa-star"> </i>
+          <i class="fas fa-star"> </i>
+        <i class="fas fa-star"> </i>
+        </div>
+      </div>
+      <p> GEM</p>
+        </div>
+
+
+
+        <div class="pro">
+          <img src="images/products/gem fire4.png" alt="Product 1">
+      <div class="des">
+       
+        <h5> Battery with high voltage </h5>
+        <div class="star">
+          <i class="fas fa-star"> </i>
+          <i class="fas fa-star"> </i>
+          <i class="fas fa-star"> </i>
+          <i class="fas fa-star"> </i>
+        <i class="fas fa-star"> </i>
+        </div>
+      </div>
+      <p> GEM</p>
+        </div>
+
+
+       
+        <div class="pro">
+         <img src="images/products/cloth amz4.png" alt="Product 1">
+      <div class="des">
+    
+        <h5>las angles Hoddy </h5>
+        <div class="star">
+          <i class="fas fa-star"> </i>
+          <i class="fas fa-star"> </i>
+          <i class="fas fa-star"> </i>
+          <i class="fas fa-star"> </i>
+        <i class="fas fa-star"> </i>
+        </div>
+      </div>
+      <p> AMAZON </p>
+        </div>
+
+
+        <div class="pro">
+          <a href="laptop_acer_index.html"> <img src="images/products/acer amz laptop1.jpeg" alt="Product 1"> </a>
+      <div class="des">
+       
+        <h5> Acer laptop intel core i5</h5>
+        <div class="star">
+          <i class="fas fa-star"> </i>
+          <i class="fas fa-star"> </i>
+          <i class="fas fa-star"> </i>
+          <i class="fas fa-star"> </i>
+        <i class="fas fa-star"> </i>
+        </div>
+      </div>
+      <p> AMAZON </p>
+        </div>
+
+
+        <div class="pro">
+          <a href="mobile_samsung_index.html"><img src="images/products/samsung amz phone2.jpeg" alt="Product 1"> </a>
+      <div class="des">
+       
+        <h5>Samsung Smart Phone  </h5>
+        <div class="star">
+          <i class="fas fa-star"> </i>
+          <i class="fas fa-star"> </i>
+          <i class="fas fa-star"> </i>
+          <i class="fas fa-star"> </i>
+        <i class="fas fa-star"> </i>
+        </div>
+      </div>
+      <p> AMAZON </p>
+        </div>
+
+
+        <div class="pro">
+            <img src="images/products/amz bag3.png" alt="Product 1"> 
+      <div class="des">
+    
+        <h5> trolley bag </h5>
+        <div class="star">
+          <i class="fas fa-star"> </i>
+          <i class="fas fa-star"> </i>
+          <i class="fas fa-star"> </i>
+          <i class="fas fa-star"> </i>
+        <i class="fas fa-star"> </i>
+        </div>
+      </div>
+      <p> AMAZON </p>
+        </div>
+
+
+        <div class="pro">
+          <a href="refrigerator_index.html"></a> <img src="images/products/friz flipkart2.jpeg" alt="Product 1">
+      <div class="des">
+        <h5>  single door refrigerator with low consuming power</h5>
+        <div class="star">
+          <i class="fas fa-star"> </i>
+          <i class="fas fa-star"> </i>
+          <i class="fas fa-star"> </i>
+          <i class="fas fa-star"> </i>
+        <i class="fas fa-star"> </i>
+        </div>
+      </div>
+      <p> FLIPKART </p>
+        </div>
+
+
+        <div class="pro">
+          <img src="images/products/bed flipkarty3.png" alt="Product 1">
+      <div class="des">
+       
+        <h5> Double bed with comfortable matress </h5>
+        <div class="star">
+          <i class="fas fa-star"> </i>
+          <i class="fas fa-star"> </i>
+          <i class="fas fa-star"> </i>
+          <i class="fas fa-star"> </i>
+        <i class="fas fa-star"> </i>
+        </div>
+      </div>
+      <p> FLIPKART </p>
+      </div>
+
+      
+      <div class="pro">
+        <a href="tv.html"><img src="images/products/tv flipkart1.jpeg" alt="Product 1"></a>
+    <div class="des">
+     
+      <h5> 64 inch high quality television </h5>
+      <div class="star">
+        <i class="fas fa-star"> </i>
+        <i class="fas fa-star"> </i>
+        <i class="fas fa-star"> </i>
+        <i class="fas fa-star"> </i>
+      <i class="fas fa-star"> </i>
+      </div>
+    </div>
+    <p> FLIPKART </p>
+    </div>
+
+    <div class="pro">
+     <img src="images/products/watch flipkart4.png" alt="Product 1">
+  <div class="des">
+  
+    <h5>Smart Wrist watch </h5>
+    <div class="star">
+      <i class="fas fa-star"> </i>
+      <i class="fas fa-star"> </i>
+      <i class="fas fa-star"> </i>
+      <i class="fas fa-star"> </i>
+    <i class="fas fa-star"> </i>
+    </div>
+  </div>
+  <p> FLIPKART </p>
+  </div>
+    </section>
+    <!-- new arrivals end -->
+
+    <!--Register yourself-->
+    <section id="Registeryourself" class="section-p1 section-m1">
+      <div class="newstext">
+        <h4>Sign up to register your business with us</h4>
+        <p>Get your business a <span>Worldwide</span> recognition!!
+        </p>
+      </div>
+      <div class="form">
+        <input type="text" placeholder="Your Email Address">
+        <button class="normal">Register Yourself</button>
+      </div>
+    </section>
+    
+     
+
+
+
+
+   
+
+    <footer class="section-p1">
+      <div class="col">
+        <img class="logo" src="images/logo.png" alt="">
+        <h4>Contact</h4>
+        <p><strong>Address: </strong>ABESIT GROUP OF INSTITUTION,GHAZIABAD,UP</p>
+        <p><strong>Phone: </strong>(+91) 1234567890</p>
+        <p><strong>Hours:</strong>10:00 - 05:00  MON-FRI</p>
+        <div class="Follow">
+          <h4>Follow Us</h4>
+          <div class="icon">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-x-twitter"></i>
+            <i class="fa-brands fa-square-instagram"></i>
+            <i class="fa-brands fa-pinterest"></i>
+            <i class="fa-brands fa-youtube"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <h4>About</h4>
+        <a href="#">About Us</a>
+        <a href="#">Delivery Information</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Contact Us</a>
+
+        <div class="col">
+          <h4>My Account</h4>
+          <a href="#">My account</a>
+          <a href="#">My Wishlist</a>
+          <a href="#">Track My Order</a>
+          <a href="#">Help</a>
+      </div>
+
+      <div class="col install">
+        <h4>Install App</h4>
+        <p>From App Store or Google Store</p>
+        <div class="row">
+          <img src="images/payment/app store.jpeg" alt="">
+          <img src="images/payment/Google play strore.png">
+        </div>
+
+      <div class="CopyRight">
+        <p> 2023, CompareSphere - A Startup Website </p>
+      </div>
+    </footer>
+
+    <!-- chatbot starts-->
+
+    <!--Footer-->
+  
+
+    <script>
+      /* nav dropdown js starts */
+      function toggleDropdown() {
+        var dropdownContent = document.getElementById("dropdownContent");
+        if (dropdownContent.style.display === "block") {
+          dropdownContent.style.display = "none";
+        } else {
+          dropdownContent.style.display = "block";
+        }
+      }
+    </script>
+    
+
+<script>
+  /* settings start */
+  function toggleSettings() {
+              const container = document.querySelector('.container');
+             const overlay = document.querySelector('.overlay');
+          
+              if (container.style.right === '0px') {
+                container.style.right = '-300px';
+                overlay.style.display = 'none';
+              } else {
+                container.style.right = '0px';
+                overlay.style.display = 'block';
+              }
+            }
+          
+            function saveChanges() {
+              const receiveEmailNotifications1 = document.getElementById('emailToggle1').checked;
+              const showProfileToOthers = document.getElementById('profileToggle').checked;
+              const newName = document.getElementById('nameInput').value;
+              const selectedLanguage = document.getElementById('languageSelect').value;
+              const receiveEmailNotifications2 = document.getElementById('emailToggle2').checked;
+          
+              // Add logic to save the changes (e.g., send an API request)
+              alert('Changes saved!\nEmail Notifications 1: ' + receiveEmailNotifications1 +
+                    '\nShow Profile to Others: ' + showProfileToOthers +
+                    '\nName: ' + newName +
+                    '\nLanguage: ' + selectedLanguage +
+                    '\nEmail Notifications 2: ' + receiveEmailNotifications2);
+          
+              // Close the settings menu after saving changes
+              toggleSettings();
+            }
+   /* settings menu closed  */
+
+   /* extra features start*/
+   function toggleSidebar() {
+       var sidebar = document.getElementById("sidebar");
+       if (sidebar.style.left === "0px") {
+           sidebar.style.left = "-250px";
+       } else {
+           sidebar.style.left = "0px";
+       }
+   }
+   /* extra features end*/
+   </script>
+
+
+
+</body>
+</html>

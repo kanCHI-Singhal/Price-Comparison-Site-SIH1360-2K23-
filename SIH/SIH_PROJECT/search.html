@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+    font-family: Arial, sans-serif;
+  }
+  
+  .search-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  #suggestionsList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+  }
+  
+  #suggestionsList li {
+    padding: 8px;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+  }
+  
+  #suggestionsList li:hover {
+    background-color: #f5f5f5;
+  }
+  
+  #searchInput {
+    width: 300px;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+  </style>
+  <title>E-commerce Search</title>
+</head>
+<body>
+  <div class="search-container">
+     <input type="text" id="searchInput" placeholder="Search for electrical items...">
+     <a href="product_laptop.html"> <ul id="suggestionsList"></ul></a>
+  </div>
+
+
+  <script>
+    const suggestedItems = [
+    "LED TV",
+    "Laptop",
+    "Refrigerator",
+    "Washing Machine",
+    "Air Conditioner",
+    "Blender",
+    "Toaster",
+    "Electric Kettle",
+  ];
+  const searchInput = document.getElementById("searchInput");
+  const suggestionsList = document.getElementById("suggestionsList");
+  const productDetailsContainer = document.getElementById('productDetails');
+  searchInput.addEventListener("input", handleInput);
+  function handleInput() {
+    const userInput = searchInput.value.toLowerCase();
+    const filteredItems = suggestedItems.filter(item => item.toLowerCase().includes(userInput));
+  
+    displaySuggestions(filteredItems);
+  }
+  function displaySuggestions(items) {
+    suggestionsList.innerHTML = "";
+    items.forEach(item => {
+      const li = document.createElement("li");
+      li.textContent = item;
+      li.addEventListener("click", () => {
+        handleItemClick(item);
+      });
+      suggestionsList.appendChild(li);
+    });
+  }
+  function handleItemClick(item) {
+    if (item.toLowerCase() === 'laptop') {
+      displayAllLaptops();
+    } else {
+      window.location.href = `product-page.html?item=${encodeURIComponent(item)}`;
+    }
+  }
+  function displayAllLaptops() {
+    const laptops = [
+      { name: 'Laptop 1', price: '$999' },
+      { name: 'Laptop 2', price: '$1299' },
+      { name: 'Laptop 3', price: '$899' },
+      
+    ];
+  
+    productDetailsContainer.innerHTML = "";
+  
+    laptops.forEach(laptop => {
+      const laptopDiv = document.createElement('div');
+      laptopDiv.innerHTML = `<p>${laptop.name} - ${laptop.price}</p>`;
+      productDetailsContainer.appendChild(laptopDiv);
+    });
+  }
+  document.addEventListener("click", (event) => {
+    if (!event.target.matches("#searchInput")) {
+      suggestionsList.innerHTML = "";
+    }
+  });
+  
+  </script>
+</body>
+</html>
