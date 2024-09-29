@@ -1,0 +1,1 @@
+A price comparison site which compares the prices of a GEM (Government E-Market Place) with other E-Market places like Amazon, Flipkart. This is a problem statement from Smart India Hackathon 2K23. whose PsID ID SIH1360. we had made the both frontend and little backend of this site using HTML,CSS,JS and PHP
